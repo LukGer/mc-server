@@ -1,0 +1,18 @@
+services:
+  mc-server:
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    ports:
+      - 25565:25565
+      - 24454:24454
+    environment:
+      EULA: TRUE
+      TYPE: FABRIC
+      MIN_MEMORY: 3G
+      MAX_MEMORY: 6G
+      SPAWN_PROTECTION: 0
+      DIFFICULTY: hard
+    volumes:
+      - ./data:/data
+      - ./mods:/mods
